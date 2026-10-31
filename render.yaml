@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: onepiece-character-builder
+    runtime: docker
+    plan: free
+    healthCheckPath: /?action=health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: COOKIE_SECRET
+        generateValue: true
